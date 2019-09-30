@@ -37,5 +37,8 @@ public class WerteBereichsChecker {
         System.out.println(min < input && input < max);
         // bonus task: output (including limits)
         System.out.println(min <= input && input <= max);
+
+        // close scanner object
+        reader.close();
     }
 }

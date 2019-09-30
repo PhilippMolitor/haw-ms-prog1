@@ -26,5 +26,8 @@ public class GeradeZahlenChecker {
 
         // output
         System.out.println(input % 2 == 0);
+
+        // close scanner object
+        reader.close();
     }
 }

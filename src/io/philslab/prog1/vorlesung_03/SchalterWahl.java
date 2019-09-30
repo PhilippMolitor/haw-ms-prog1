@@ -36,5 +36,8 @@ public class SchalterWahl {
 
         // output
         System.out.println("Changed byte to:  " + String.format("%8s", Integer.toBinaryString(byteBlob)).replace(' ', '0'));
+
+        // close scanner object
+        reader.close();
     }
 }
