@@ -1,6 +1,6 @@
 <component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="Grundrechenarten" type="Application" factoryName="Application" folderName="ha1" nameIsGenerated="true">
-    <option name="MAIN_CLASS_NAME" value="io.philslab.prog1.ha1.Grundrechenarten" />
+  <configuration default="false" name="Grundrechenarten" type="Application" factoryName="Application" folderName="vorlesung_02" nameIsGenerated="true">
+    <option name="MAIN_CLASS_NAME" value="io.philslab.prog1.vorlesung_02.Grundrechenarten" />
     <module name="Programming1" />
     <extension name="coverage">
       <pattern>

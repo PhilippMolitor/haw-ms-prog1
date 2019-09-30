@@ -1,6 +1,6 @@
 <component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="AdditionsProgramm" type="Application" factoryName="Application" folderName="vl1" nameIsGenerated="true">
-    <option name="MAIN_CLASS_NAME" value="io.philslab.prog1.vl1.AdditionsProgramm" />
+  <configuration default="false" name="AdditionsProgramm" type="Application" factoryName="Application" folderName="vorlesung_02" nameIsGenerated="true">
+    <option name="MAIN_CLASS_NAME" value="io.philslab.prog1.vorlesung_02.AdditionsProgramm" />
     <module name="Programming1" />
     <extension name="coverage">
       <pattern>

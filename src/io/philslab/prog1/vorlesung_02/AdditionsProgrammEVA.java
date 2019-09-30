@@ -1,4 +1,4 @@
-package io.philslab.prog1.vl1;// Scanner importieren
+package io.philslab.prog1.vorlesung_02;// Scanner importieren
 import java.util.Scanner;
 
 public class AdditionsProgrammEVA {

@@ -1,4 +1,4 @@
-package io.philslab.prog1.ha1;
+package io.philslab.prog1.vorlesung_02;
 
 import java.util.Locale;
 import java.util.Scanner;

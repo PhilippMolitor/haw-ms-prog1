@@ -1,4 +1,4 @@
-package io.philslab.prog1.vl1;
+package io.philslab.prog1.vorlesung_02;
 
 public class HelloWorld {
     public static void main(String[] args) {

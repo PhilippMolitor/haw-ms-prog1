@@ -1,4 +1,4 @@
-package io.philslab.prog1.vl1;/*
+package io.philslab.prog1.vorlesung_02;/*
  * AdditionsProgramm: Philipp Molitor - philipp.molitor@haw-hamburg.de
  */
 
