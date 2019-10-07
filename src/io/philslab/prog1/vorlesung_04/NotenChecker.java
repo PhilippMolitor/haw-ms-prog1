@@ -11,6 +11,17 @@ package io.philslab.prog1.vorlesung_04;
  * Beispiel:
  * Geben Sie ihre Note ein: 2
  * Sie haben bestanden!
+ *
+ * Erweitern Sie das Programm NotenChecker, sodass bei invaliden Eingaben mit
+ * „ungültige Note“ quittiert wird.
+ * Außerdem sollen die Noten entsprechend ihrer Textform ausgegeben werden
+ * (1 = mit sehr gut bestanden, 2 = mit gut bestanden, usw...)
+ *
+ * Fertigen Sie zusätzlich ein UML Diagramm zum Programmablauf an.
+ *
+ * Beispiel:
+ * Geben Sie ihre Note ein: 3
+ * Sie haben mit der Note befriedigend bestanden!
  */
 
 import java.util.Scanner;
@@ -24,19 +35,40 @@ public class NotenChecker {
         System.out.print("Geben Sie ihre Note ein: ");
         int grade = reader.nextInt();
 
+        // state
+        boolean validGrade = true;
+        boolean passed = true;
+        String textGrade = "";
+
+        // analyze grade
         switch (grade) {
             case 1:
+                textGrade = "sehr gut";
+                break;
             case 2:
+                textGrade = "gut";
+                break;
             case 3:
+                textGrade = "befriedigend";
+                break;
             case 4:
-                System.out.println("Sie haben bestanden!");
+                textGrade = "ausreichend";
                 break;
             case 5:
-                System.out.println("Sie sind durchgefallen!");
+                passed = false;
                 break;
             default:
-                System.out.println("Ungültige Note!");
+                validGrade = false;
                 break;
+        }
+
+        // output
+        if(!validGrade) {
+            System.out.println("Ungültige Note!");
+        } else if(passed) {
+            System.out.printf("Sie haben mit \"%s\" bestanden!\n", textGrade);
+        } else {
+            System.out.println("Sie sind durchgefallen!");
         }
 
         // close scanner object
