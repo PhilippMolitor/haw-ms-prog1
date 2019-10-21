@@ -37,8 +37,8 @@ public class Sitzplan {
         // create array and output simultaneously
         char[][] plan = new char[columns][rows];
         for (int r = 0; r < rows; r++) {
-            for(int c = 0; c < columns; c++) {
-                if(inputColumn -1 == c && inputRow - 1 == r) {
+            for (int c = 0; c < columns; c++) {
+                if (inputColumn - 1 == c && inputRow - 1 == r) {
                     plan[c][r] = 'X';
                 } else {
                     plan[c][r] = '0';
