@@ -1,0 +1,15 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="Programmablauf" type="Application" factoryName="Application" folderName="vorlesung_08" nameIsGenerated="true">
+    <option name="MAIN_CLASS_NAME" value="io.philslab.prog1.vorlesung_08.Programmablauf" />
+    <module name="Programming1" />
+    <extension name="coverage">
+      <pattern>
+        <option name="PATTERN" value="io.philslab.prog1.vorlesung_08.*" />
+        <option name="ENABLED" value="true" />
+      </pattern>
+    </extension>
+    <method v="2">
+      <option name="Make" enabled="true" />
+    </method>
+  </configuration>
+</component>
