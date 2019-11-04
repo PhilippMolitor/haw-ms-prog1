@@ -22,8 +22,30 @@ public class Trainer {
         pokemons.add(poke);
     }
 
+    // fight another trainer
+    public void fight(Trainer enemy) {
+        activePokemon.fight(enemy.activePokemon);
+    }
+
+    // Get a list of only living pokemons
+    public Pokemon[] getLivingPokemons() {
+        List<Pokemon> livingPokemons = new ArrayList<>();
+
+        for (Pokemon p : pokemons) {
+            if (p.getHealth() > 0) {
+                livingPokemons.add(p);
+            }
+        }
+        
+        Pokemon[] result = new Pokemon[livingPokemons.size()];
+        livingPokemons.toArray(result);
+
+        return result;
+    }
+
     // select random pokemon from available ones and set the current one
     void callPokemon() {
-        activePokemon = pokemons.get(new Random().nextInt(pokemons.size()));
+        Pokemon[] livingPokemons = getLivingPokemons();
+        activePokemon = livingPokemons[new Random().nextInt(livingPokemons.length)];
     }
 }
