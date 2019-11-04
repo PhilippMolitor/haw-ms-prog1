@@ -6,21 +6,21 @@ import java.util.Random;
 
 public class Pokemon {
     // subclass for attack info
-    private class Attack {
-        private String name = "Generische Attacke";
-        private int damage = 0;
+    public class Attack {
+        private String name;
+        private int damage;
 
         // constructor
         public Attack(String name, int damage) {
-            name = name;
-            damage = damage;
+            this.name = name;
+            this.damage = damage;
 
             attacks.add(this);
         }
 
         // print info about this attack
         public void attackInfo() {
-            System.out.format("%s (%d %s-Damage)", this.name, this.damage, type);
+            System.out.format("%s (%d %s-Damage)\n", this.name, this.damage, type);
         }
     }
 
@@ -51,14 +51,6 @@ public class Pokemon {
         attacks = new ArrayList<>();
     }
 
-    /**
-     * +fight(Pokemonp):void
-     * +getName(): String
-     * +getHealth(): int
-     * ~takeDamage(intdmg): void
-     * +toString(): String
-     */
-
     // deal damgage to another pokemon
     public void fight(Pokemon p) {
         // pick a random attack
@@ -84,7 +76,7 @@ public class Pokemon {
     // string representation of the pokemon
     public String toString() {
         Attack a = attacks.get(new Random().nextInt(attacks.size()));
-        return String.format("%s (Level %d), %s-Pokemon\nExp: %d\nLeben: %d\nSchaden: %d", name, lvl, type.toString().toLowerCase(), exp, health, a.damage);
+        return String.format("%s (Level %d), %s-Pokemon\nExp: %d\nLeben: %d\nSchaden: %d\n", name, lvl, type.toString().toLowerCase(), exp, health, a.damage);
     }
 
     // take damage and substract it from the current health
