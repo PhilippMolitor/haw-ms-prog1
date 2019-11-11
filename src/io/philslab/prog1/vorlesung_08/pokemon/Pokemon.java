@@ -42,13 +42,53 @@ public class Pokemon {
     private List<Attack> attacks;
 
     // constructor
-    public Pokemon() {
+    protected Pokemon() {
         type = PokemonTyp.values()[new Random().nextInt(PokemonTyp.values().length)];
         name = "Generisches Pokemon";
         lvl = 1;
         exp = 0;
         health = 10;
         attacks = new ArrayList<>();
+    }
+
+    public PokemonTyp getType() {
+        return type;
+    }
+
+    public void setType(PokemonTyp type) {
+        this.type = type;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public int getLvl() {
+        return lvl;
+    }
+
+    public void setLvl(int lvl) {
+        this.lvl = lvl;
+    }
+
+    public int getExp() {
+        return exp;
+    }
+
+    public void setExp(int exp) {
+        this.exp = exp;
+    }
+
+    public int getHealth() {
+        return health;
+    }
+
+    public void setHealth(int health) {
+        this.health = health;
     }
 
     // deal damgage to another pokemon
@@ -61,16 +101,6 @@ public class Pokemon {
 
         // show dealt damage
         a.attackInfo();
-    }
-
-    // get the name of the pokemon
-    public String getName() {
-        return name;
-    }
-
-    // get the current health of the pokemon
-    public int getHealth() {
-        return health;
     }
 
     // string representation of the pokemon

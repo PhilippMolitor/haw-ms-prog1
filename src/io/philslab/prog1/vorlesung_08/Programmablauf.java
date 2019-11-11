@@ -1,8 +1,9 @@
 package io.philslab.prog1.vorlesung_08;
 
-import io.philslab.prog1.vorlesung_08.pokemon.Pokemon;
-
-import java.util.Random;
+import io.philslab.prog1.vorlesung_08.pokemon.feuer.Glumanda;
+import io.philslab.prog1.vorlesung_08.pokemon.pflanze.Bisaknosp;
+import io.philslab.prog1.vorlesung_08.pokemon.pflanze.Bisasam;
+import io.philslab.prog1.vorlesung_08.pokemon.wasser.Schiggy;
 
 public class Programmablauf {
     public static void main(String[] args) {
@@ -11,19 +12,12 @@ public class Programmablauf {
         Trainer t2 = new Trainer("Ashe");
 
         // Create 6 pokemons
-        for (int i = 0; i < 6; i++) {
-            // Create pokemon and add some attacks
-            Pokemon newPoke = new Pokemon();
-            newPoke.new Attack("Attacke 1", 1 + new Random().nextInt(4));
-            newPoke.new Attack("Attacke 2", 1 + new Random().nextInt(4));
-
-            // Assign evenly to the trainers
-            if (i % 2 == 0) {
-                t1.addPokemon(newPoke);
-            } else {
-                t2.addPokemon(newPoke);
-            }
-        }
+        t1.addPokemon(new Glumanda());
+        t1.addPokemon(new Bisasam());
+        t1.addPokemon(new Bisaknosp());
+        t2.addPokemon(new Glumanda());
+        t2.addPokemon(new Bisasam());
+        t2.addPokemon(new Schiggy());
 
         // state: is the battle over yet?
         boolean battleOver = false;
