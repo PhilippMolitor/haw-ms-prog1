@@ -1,0 +1,9 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="Pr0gramm" type="Application" factoryName="Application" folderName="vorlesung_09" nameIsGenerated="true">
+    <option name="MAIN_CLASS_NAME" value="io.philslab.prog1.vorlesung_09.Pr0gramm" />
+    <module name="Programming1" />
+    <method v="2">
+      <option name="Make" enabled="true" />
+    </method>
+  </configuration>
+</component>
