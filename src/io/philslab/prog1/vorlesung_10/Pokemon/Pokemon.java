@@ -9,7 +9,7 @@ import java.util.Random;
 
 public class Pokemon {
     // ENUMS
-    public enum pokemonType {FIRE, WATER, PLANT;}
+    public enum pokemonType {FIRE, WATER, PLANT, NORMAL}
 
     // ATTRIBUTES
     private String name;
@@ -49,8 +49,7 @@ public class Pokemon {
                     name, health, enemy.name, enemy.health);
 
             // deal damage to the enemys-pokemon
-            enemy.takeDamage(atk.damage);
-            atk.attackInfo();
+            atk.doDamage(enemy);
 
             // enemy defeated? => earn exp/lvl
             if (enemy.getHealth() <= 0) {
@@ -123,14 +122,78 @@ public class Pokemon {
     public class Attack {
         private String name;
         private int damage;
+        pokemonType type = pokemonType.NORMAL;
+        protected List<pokemonType> effectiveAgainst = new ArrayList<>();
+        protected List<pokemonType> ineffectiveAgainst = new ArrayList<>();
 
-        Attack(String n, int d) {
+        private Attack(String n, int d) {
             name = n;
             damage = Math.abs(d);
+        }
+
+        public void doDamage(Pokemon p) {
+            String bonusText = "";
+
+            // calculate efficiency and damage the enemy pokemon
+            if (effectiveAgainst.contains(p.type)) {
+                // effective
+                p.takeDamage(damage + 2);
+                bonusText = "is very effective!";
+            } else if (ineffectiveAgainst.contains(p.type)) {
+                // ineffective
+                p.takeDamage(damage - 2);
+                bonusText = "is not very effective...";
+            } else {
+                // neutral
+                p.takeDamage(damage);
+            }
+
+            // output bonus info
+            System.out.println(name + " (" + damage + " " + type + " damage) " + bonusText);
         }
 
         public void attackInfo() {
             System.out.println(name + " (" + damage + " " + type + " damage)");
         }
+    }
+
+    public class Attack_Plant extends Attack {
+        Attack_Plant(String name, int dmg) {
+            super(name, dmg);
+
+            type = pokemonType.PLANT;
+
+            effectiveAgainst.add(pokemonType.WATER);
+            ineffectiveAgainst.add(pokemonType.PLANT);
+            ineffectiveAgainst.add(pokemonType.FIRE);
+        }
+    }
+
+    public class Attack_Water extends Attack {
+        Attack_Water(String name, int dmg) {
+            super(name, dmg);
+
+            type = pokemonType.WATER;
+
+            effectiveAgainst.add(pokemonType.FIRE);
+            ineffectiveAgainst.add(pokemonType.PLANT);
+            ineffectiveAgainst.add(pokemonType.WATER);
+        }
+    }
+
+    public class Attack_Fire extends Attack {
+        Attack_Fire(String name, int dmg) {
+            super(name, dmg);
+
+            type = pokemonType.FIRE;
+
+            effectiveAgainst.add(pokemonType.PLANT);
+            ineffectiveAgainst.add(pokemonType.FIRE);
+            ineffectiveAgainst.add(pokemonType.WATER);
+        }
+    }
+
+    public void speak() {
+        System.out.println("Pokemon");
     }
 }
